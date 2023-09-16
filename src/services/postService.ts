@@ -4,7 +4,7 @@ import {urls} from "../contants/urls";
 
 const postService = {
     getAll():IRes<IPost[]>{
-        return apiService.get(urls.posts)
+        return apiService.get(urls.genres)
     }
 }
 

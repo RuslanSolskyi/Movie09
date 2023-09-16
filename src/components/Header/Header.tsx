@@ -22,8 +22,8 @@ const Header = () => {
             </div>
             <div className={css.links}>
                 <Link to={'users'}>Movies</Link>
-                <Link to={'posts'}>Genres</Link>
-                <Link to={'count'}>Search</Link>
+                <Link to={'genres'}>Genres</Link>
+                <Link to={'search'}>Search</Link>
             </div>
             <div className={css.right}>
                 <div>

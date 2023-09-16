@@ -1,11 +1,11 @@
 const baseURL = process.env.REACT_APP_API
 
 const users = '/users'
-const posts = '/posts'
+const genres = '/genres'
 
 const urls ={
     users,
-    posts
+    genres
 }
 
 export {
