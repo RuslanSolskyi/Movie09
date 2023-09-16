@@ -1,41 +1,4 @@
-/*!* Movies.module.css *!*/
-/*.movies-list {*/
-/*    display: flex;*/
-/*    flex-wrap: wrap;*/
-/*    justify-content: space-around;*/
 
-/*}*/
-
-/*.movie-card {*/
-/*    width: calc(20% - 20px); !* Щоб помістити по п'ять фільмів в один рядок *!*/
-/*    margin-bottom: 20px;*/
-/*    padding: 10px;*/
-/*    box-sizing: border-box;*/
-/*    background-color: #aedccd;*/
-/*    border-radius: 5px;*/
-/*    text-align: center;*/
-/*}*/
-
-/*.movie-card img {*/
-/*    max-height: 40vh; !* Картинки займають 40% висоти екрану *!*/
-/*    width: 100%;*/
-/*    object-fit: cover;*/
-/*    border-radius: 5px;*/
-/*}*/
-
-/*.movie-card h3 {*/
-/*    margin-top: 10px;*/
-/*    font-size: 18px; !* Застосуйте свій розмір шрифту *!*/
-/*    font-weight: bold;*/
-/*    !* Додайте інші стилі для назви фільму на свій смак *!*/
-/*}*/
-
-/*.movie-card .rating {*/
-/*    font-size: 20px; !* Застосуйте свій розмір шрифту *!*/
-/*}*/
-/* Movies.module.css*/
-
-/*!* Movies.module.css *!*/
 
 .movies-list {
     display: flex;
@@ -126,4 +89,25 @@
     background-color: #ccc;
     color: #999; /* Сірий колір тексту в вимкненому стані */
     cursor: not-allowed;
+}
+
+
+
+
+/* Додайте цей код у вашому CSS-файлі (Movies.module.css) */
+.movies-search {
+    text-align: center; /* Відцентрувати вміст горизонтально */
+    margin-bottom: 8px; /* Додайте бажаний відступ між полем вводу і фільмами */
+}
+
+.movies-search input {
+    padding: 10px; /* Задайте відступи для поля вводу */
+    border: 2px solid #ccc; /* Додайте рамку для поля вводу */
+    border-radius: 5px; /* Закругліть кути */
+    width: 60%; /* Задайте ширину поля вводу (змініть її за потребою) */
+    font-size: 16px; /* Задайте розмір шрифту */
+}
+
+.movies-search input::placeholder {
+    color: #999; /* Задайте колір тексту плейсхолдера */
 }

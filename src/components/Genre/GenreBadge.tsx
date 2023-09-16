@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './MoviesList.css';
 import styles from "../MoviesContainer/Movies.module.css";
-import {NavLink} from "react-router-dom";
 import {getStarRating} from "../MoviesContainer/getStarRating"; // Підключаємо файл стилів
 
 interface Movie {
