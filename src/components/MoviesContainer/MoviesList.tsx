@@ -76,3 +76,5 @@ function MoviesList() {
 }
 
 export default MoviesList;
+
+

@@ -39,11 +39,12 @@
 // }
 import { createBrowserRouter, Navigate } from "react-router-dom";
 import { MoviesPage } from "./pages/MoviesPage";
-import { GenresPage } from "./pages/GenresPage";
-import {SearchPage} from "./pages/SearchPages";
+import  GenresPage  from "./pages/GenresPage";
+
 import React from "react";
 import { MainLayout } from "./layouts/MainLayout";
 import MovieDetailPage from "./pages/MovieDetailPage";
+import SearchPage from "./pages/SearchPage";
 
 
 const router = createBrowserRouter([

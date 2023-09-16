@@ -1,0 +1,58 @@
+/* MoviesList.css */
+
+.movies-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.genres-container {
+    flex: 1;
+    background-color: #ccc;
+    padding: 10px;
+    min-width: 200px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    align-content: start;
+}
+
+.genre-badge {
+    display: block;
+    padding: 5px;
+    color: #ff6600; /* Помаранчевий колір тексту */
+    border: 1px solid #000;
+    cursor: pointer;
+    text-align: center;
+}
+
+.movies-list {
+    flex: 2;
+    display: flex;
+    flex-wrap: wrap; /* Розміщення фільмів в рядок */
+    gap: 20px;
+}
+
+.movie-card {
+    width: calc(20% - 20px); /* Зменшуємо розмір картки фільму та розміщаємо в рядок */
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 10px;
+    text-align: center;
+    box-shadow: 0px 0px 5px 0px #000;
+}
+
+.movie-card img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.movie-title {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.rating {
+    font-weight: bold;
+    color: #ffd400;
+}
