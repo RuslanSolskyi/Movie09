@@ -1,10 +1,11 @@
+
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import styles from './Movies.module.css';
 import { getStarRating } from './getStarRating';
-import {NavLink} from "react-router-dom";
-import {IMovie} from "../../interfaces/movieInterface";
-
+import { NavLink } from 'react-router-dom';
+import { IMovie } from '../../interfaces/movieInterface';
+import {apiKey, baseURL, urls} from "../../contants/urls";
 
 
 function MoviesList() {
@@ -15,9 +16,8 @@ function MoviesList() {
     useEffect(() => {
         const fetchMovies = async () => {
             try {
-                const apiKey = 'a7e22a0fd6d38c1ae886589c063efc50';
                 const response = await axios.get(
-                    `https://api.themoviedb.org/3/discover/movie?api_key=${apiKey}&page=${page}`
+                    `${baseURL}/discover/movie?api_key=${apiKey}&page=${page}`
                 );
                 setMovies(response.data.results);
                 setTotalPages(response.data.total_pages);
@@ -70,5 +70,3 @@ function MoviesList() {
 }
 
 export default MoviesList;
-
-

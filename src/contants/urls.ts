@@ -30,4 +30,4 @@ const urls = {
     movieDetails: `${baseURL}${endpoints.movieDetails}`, // Оновлений URL для деталей фільму
 };
 
-export { baseURL, urls };
+export { baseURL, urls, apiKey };

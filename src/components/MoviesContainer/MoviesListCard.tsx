@@ -62,4 +62,3 @@ function MoviesListCarD() {
 }
 
 export default MoviesListCarD;
-
