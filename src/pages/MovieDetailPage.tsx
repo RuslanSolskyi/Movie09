@@ -1,37 +1,57 @@
-import React from 'react';
-import {useParams} from "react-router-dom";
-import MoviesListCard from "../components/MoviesContainer/MoviesListCard";
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import axios from 'axios';
+import './MovieDetailPage.css'; // Підключаємо файл стилів
 
-const MovieDetailPage = () => {
-    const { id } = useParams();
-    const movieData = {
-        id: 1,
-        title: 'Sample Movie',
-        release_date: '2023-09-16',
-        vote_average: 7.5,
-        overview: 'This is a sample movie overview.',
-        poster_path: '/sample-poster.jpg',
-        credits: {
-            cast: [
-                {
-                    id: 101,
-                    name: 'Actor 1',
-                    profile_path: '/actor1.jpg',
-                },
-                {
-                    id: 102,
-                    name: 'Actor 2',
-                    profile_path: '/actor2.jpg',
-                },
-            ],
-        },
-    };
+function MovieDetailPage() {
+    const { id } = useParams<{ id: string }>();
+    const [movieDetails, setMovieDetails] = useState<any>(null);
+
+    useEffect(() => {
+        const fetchMovieDetails = async () => {
+            try {
+                const apiKey = 'a7e22a0fd6d38c1ae886589c063efc50';
+                const response = await axios.get(
+                    `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&append_to_response=credits`
+                );
+                setMovieDetails(response.data);
+            } catch (error) {
+                console.error('Помилка отримання даних з API:', error);
+            }
+        };
+
+        fetchMovieDetails();
+    }, [id]);
+
+    if (!movieDetails) {
+        return <div>Loading...</div>;
+    }
+
+    const cast = movieDetails.credits?.cast || [];
+
     return (
-        <div>
-            <MoviesListCard movie={movieData}></MoviesListCard>
-            drhtrhtrhtr
+        <div className="movie-details-container">
+            <div className="movie-details-image">
+                <img
+                    src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`}
+                    alt={movieDetails.title}
+                />
+            </div>
+            <div className="movie-details-info">
+                <h1>{movieDetails.title}</h1>
+                <p>Рейтинг: {movieDetails.vote_average}</p>
+                <p>Жанри: {movieDetails.genres.map((genre: any) => genre.name).join(', ')}</p>
+                <p>Тривалість: {movieDetails.runtime} хвилин</p>
+                <h2>Актори:</h2>
+                <ul>
+                    {cast.slice(0, 5).map((actor: any) => (
+                        <li key={actor.id}>{actor.name}</li>
+                    ))}
+                </ul>
+                {/* Додайте інші деталі, які вам потрібні */}
+            </div>
         </div>
     );
-};
+}
 
 export default MovieDetailPage;

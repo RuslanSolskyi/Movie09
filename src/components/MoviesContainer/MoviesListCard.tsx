@@ -1,64 +1,57 @@
 import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import styles from './Movies.module.css'; // Імпортуйте стилі з файлу
+import './MovieDetailPage.css'; // Підключаємо файл стилів
 
-interface Movie {
-    id: number;
-    title: string;
-    release_date: string;
-    vote_average: number;
-    overview: string;
-    poster_path: string;
-    credits: {
-        cast: {
-            id: number;
-            name: string;
-            profile_path: string | null;
-        }[];
-    };
-}
+function MovieDetailPage() {
+    const { id } = useParams<{ id: string }>();
+    const [movieDetails, setMovieDetails] = useState<any>(null);
 
-interface MoviesListCardProps {
-    movie: Movie;
-}
+    useEffect(() => {
+        const fetchMovieDetails = async () => {
+            try {
+                const apiKey = 'a7e22a0fd6d38c1ae886589c063efc50';
+                const response = await axios.get(
+                    `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&append_to_response=credits`
+                );
+                setMovieDetails(response.data);
+            } catch (error) {
+                console.error('Помилка отримання даних з API:', error);
+            }
+        };
 
-function MoviesListCard({ movie }: MoviesListCardProps) {
-    // Функція для конвертації числового рейтингу у рядок зірочок
-    function convertRatingToStars(rating: number): string {
-        const maxRating = 10;
-        const filledStars = Math.floor((rating / 10) * maxRating);
-        const emptyStars = maxRating - filledStars;
+        fetchMovieDetails();
+    }, [id]);
 
-        const starIcons = '★'.repeat(filledStars) + '☆'.repeat(emptyStars);
-
-        return starIcons;
+    if (!movieDetails) {
+        return <div>Loading...</div>;
     }
 
+    const cast = movieDetails.credits?.cast || [];
+
     return (
-        <div className={styles['movie-card']}>
-            <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} alt={movie.title} />
-            <h3 className={styles['movie-title']}>{movie.title}</h3>
-            <p className={styles['release-date']}>Дата виходу: {movie.release_date}</p>
-            <p className={styles['rating']}>
-                Рейтинг: {convertRatingToStars(movie.vote_average)}
-            </p>
-            <p className={styles['overview']}>{movie.overview}</p>
-            <div className={styles['actors']}>
-                <h4>Актори:</h4>
-                <div className={styles['actor-list']}>
-                    {movie.credits.cast.map((actor) => (
-                        <div key={actor.id} className={styles['actor-card']}>
-                            <img
-                                src={`https://image.tmdb.org/t/p/w200/${actor.profile_path}`}
-                                alt={actor.name}
-                            />
-                            <p className={styles['actor-name']}>{actor.name}</p>
-                        </div>
+        <div className="movie-details-container">
+            <div className="movie-details-image">
+                <img
+                    src={`https://image.tmdb.org/t/p/w500/${movieDetails.poster_path}`}
+                    alt={movieDetails.title}
+                />
+            </div>
+            <div className="movie-details-info">
+                <h1>{movieDetails.title}</h1>
+                <p>Рейтинг: {movieDetails.vote_average}</p>
+                <p>Жанри: {movieDetails.genres.map((genre: any) => genre.name).join(', ')}</p>
+                <p>Тривалість: {movieDetails.runtime} хвилин</p>
+                <h2>Актори:</h2>
+                <ul>
+                    {cast.slice(0, 5).map((actor: any) => (
+                        <li key={actor.id}>{actor.name}</li>
                     ))}
-                </div>
+                </ul>
+                {/* Додайте інші деталі, які вам потрібні */}
             </div>
         </div>
     );
 }
 
-export default MoviesListCard;
+export default MovieDetailPage;
