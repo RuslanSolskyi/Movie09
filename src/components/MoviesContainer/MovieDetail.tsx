@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import {useParams} from "react-router-dom";
 
 interface MovieDetailProps {
     match: { params: { id: string } };
@@ -14,6 +15,7 @@ export interface Movie {
     overview: string;
     poster_path: string;
 }
+
 
 const MovieDetail: React.FC<MovieDetailProps> = ({ match }) => {
     const [movie, setMovie] = useState<Movie | null>(null);

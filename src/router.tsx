@@ -45,6 +45,7 @@ import React from "react";
 import { MainLayout } from "./layouts/MainLayout";
 import MovieDetailPage from "./pages/MovieDetailPage";
 
+
 const router = createBrowserRouter([
     {
         path: '',
