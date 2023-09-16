@@ -1,0 +1,129 @@
+/*!* Movies.module.css *!*/
+/*.movies-list {*/
+/*    display: flex;*/
+/*    flex-wrap: wrap;*/
+/*    justify-content: space-around;*/
+
+/*}*/
+
+/*.movie-card {*/
+/*    width: calc(20% - 20px); !* Щоб помістити по п'ять фільмів в один рядок *!*/
+/*    margin-bottom: 20px;*/
+/*    padding: 10px;*/
+/*    box-sizing: border-box;*/
+/*    background-color: #aedccd;*/
+/*    border-radius: 5px;*/
+/*    text-align: center;*/
+/*}*/
+
+/*.movie-card img {*/
+/*    max-height: 40vh; !* Картинки займають 40% висоти екрану *!*/
+/*    width: 100%;*/
+/*    object-fit: cover;*/
+/*    border-radius: 5px;*/
+/*}*/
+
+/*.movie-card h3 {*/
+/*    margin-top: 10px;*/
+/*    font-size: 18px; !* Застосуйте свій розмір шрифту *!*/
+/*    font-weight: bold;*/
+/*    !* Додайте інші стилі для назви фільму на свій смак *!*/
+/*}*/
+
+/*.movie-card .rating {*/
+/*    font-size: 20px; !* Застосуйте свій розмір шрифту *!*/
+/*}*/
+/* Movies.module.css*/
+
+/*!* Movies.module.css *!*/
+
+.movies-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Розташування між елементами */
+}
+
+.movie-card {
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 10px 0;
+    text-align: center;
+    width: calc(19% - 20px); /* 25% ширини з відступами */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
+}
+
+.movie-card img {
+    max-width: 100%;
+}
+
+.movie-title {
+    font-size: 1.2rem;
+    margin: 10px 0;
+}
+
+.rating {
+    font-size: 1.1rem;
+    color: #ff9800;
+}
+
+/*.pagination {*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    margin-top: 20px;*/
+/*}*/
+
+/*.pagination button {*/
+/*    background-color: #007acc;*/
+/*    color: #fff;*/
+/*    padding: 10px 20px;*/
+/*    border: none;*/
+/*    margin: 0 5px;*/
+/*    cursor: pointer;*/
+/*    transition: background-color 0.3s;*/
+/*}*/
+
+/*.pagination button:hover {*/
+/*    background-color: #005b9f;*/
+/*}*/
+
+/*.pagination button:disabled {*/
+/*    background-color: #ccc;*/
+/*    cursor: not-allowed;*/
+/*}*/
+/* Movies.module.css */
+
+/* Movies.module.css */
+
+/* Movies.module.css */
+
+/* Movies.module.css */
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #ccc;
+    color: #1f6ab4; /* Жовтий колір тексту */
+    border: none;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px; /* Невеликий радіус бордюру */
+    padding: 5px 15px; /* Зменшив розмір кнопок */
+    font-family: 'Ваш_шрифт', sans-serif; /* Замініть 'Ваш_шрифт' на власний шрифт */
+}
+
+.pagination button:hover {
+    background-color: #999; /* Сірий колір при наведенні */
+    color: #fff; /* Колір тексту при наведенні */
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    color: #999; /* Сірий колір тексту в вимкненому стані */
+    cursor: not-allowed;
+}
