@@ -5,7 +5,7 @@ import MoviesListCard from "../components/MoviesContainer/MoviesListCard";
 const MovieDetailPage = () => {
     return (
         <div>
-            <MovieDetailPage />
+            {/*<MovieDetailPage />*/}
             jdjvsdovmkmsdiovmklemivmoseimvlmsemvieivmoseimvioemivmiemivmweiomviemvimeimviemivmeimviemvimeivmiemviem
         </div>
     );
