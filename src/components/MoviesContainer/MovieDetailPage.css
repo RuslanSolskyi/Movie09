@@ -1,16 +1,73 @@
 /* MovieDetailPage.css */
 
+/* Стилізація головного контейнера */
 .movie-details-container {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100vh; /* Встановлюємо висоту на всю висоту вікна */
+    justify-content: center; /* Центруємо контейнер по горизонталі */
+    align-items: center; /* Центруємо контейнер по вертикалі */
+    min-height: 100vh; /* Встановлюємо мінімальну висоту на всю висоту вікна */
     color: #ffd400;
 }
 
+/* Стилізація блоку з зображенням фільму */
+.movie-details-image {
+    flex: 1; /* Займає всю доступну ширину контейнера */
+    text-align: center; /* Центруємо зображення по горизонталі */
+}
+
 .movie-details-image img {
-    width: 60%; /* Розтягуємо картинку на всю ширину батьківського контейнера */
-    height: 60%; /* Розтягуємо картинку на всю висоту батьківського контейнера */
-    object-fit: cover; /* Зберігаємо пропорції картинки та обрізаємо зайві частини */
-    color: #ffdb2d;
+    max-width: 100%; /* Зберігаємо максимальну ширину зображення */
+    height: auto; /* Зберігаємо пропорції зображення */
+    border: 2px solid #ffdb2d; /* Додаємо рамку навколо зображення */
+}
+
+/* Стилізація блоку з інформацією про фільм та акторів */
+.movie-details-info {
+    flex: 2; /* Займає дві третини доступної ширини контейнера */
+    text-align: left; /* Вирівнюємо текст ліворуч */
+    padding: 20px; /* Додаємо внутрішній відступ для контенту */
+    /*background-color: rgba(192, 192, 177, 0.8); !* Додаємо прозорий чорний фон *!*/
+    border-radius: 5px; /* Закруглюємо кути контейнера */
+    /*box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); !* Додаємо тінь *!*/
+}
+
+/* Стилізація заголовку фільму */
+.movie-details-info h1 {
+    font-size: 24px;
+    color: #ffe45d;
+}
+
+/* Стилізація рейтингу, жанрів та тривалості фільму */
+.movie-details-info p {
+    font-size: 16px;
+    color: #efb568;
+}
+
+/* Стилізація списку акторів */
+.actor-list {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center; /* Центруємо список по горизонталі */
+}
+
+.actor-list li {
+    flex: 1;
+    max-width: 120px;
+    text-align: center; /* Центруємо текст актора по горизонталі */
+}
+
+.actor-list img {
+    max-width: 100%;
+    height: auto;
+    border: 2px solid #ffdb2d;
+}
+
+/* Стилізація імен акторів */
+.actor-name {
+    margin-top: 5px;
+    font-weight: bold;
+    color: #ffdb2d; /* Жовтий колір тексту імен акторів */
 }
