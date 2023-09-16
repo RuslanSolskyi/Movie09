@@ -4,7 +4,7 @@ import {urls} from "../contants/urls";
 
 const userService = {
     getAll():IRes<IUser[]>{
-        return apiService.get(urls.users)
+        return apiService.get(urls.movies)
     }
 }
 

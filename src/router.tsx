@@ -52,10 +52,10 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                element: <Navigate to={'users'} />
+                element: <Navigate to={'movies'} />
             },
             {
-                path: 'users',
+                path: 'movies',
                 element: <MoviesPage />
             },
             {

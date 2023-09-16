@@ -21,7 +21,7 @@ const Header = () => {
                 <b>The MovieDB</b>
             </div>
             <div className={css.links}>
-                <Link to={'users'}>Movies</Link>
+                <Link to={'movies'}>Movies</Link>
                 <Link to={'genres'}>Genres</Link>
                 <Link to={'search'}>Search</Link>
             </div>

@@ -1,10 +1,10 @@
 const baseURL = process.env.REACT_APP_API
 
-const users = '/users'
+const movies = '/movies'
 const genres = '/genres'
 
 const urls ={
-    users,
+    movies,
     genres
 }
 
