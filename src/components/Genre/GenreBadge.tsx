@@ -2,18 +2,11 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import './MoviesList.css';
-import styles from "../MoviesContainer/Movies.module.css";
-import {getStarRating} from "../MoviesContainer/getStarRating"; // Підключаємо файл стилів
+import styles from '../MoviesContainer/Movies.module.css'
+import {getStarRating} from "../MoviesContainer/getStarRating";
+import {IMovie} from "../../interfaces/movieInterface";
 
-interface Movie {
-    id: number;
-    title: string;
-    release_date: string;
-    vote_average: number;
-    overview: string;
-    poster_path: string;
-    genre_ids: number[];
-}
+
 
 const GenreBadge: React.FC<{ genre: string; onClick: () => void; isActive: boolean }> = ({
                                                                                              genre,
@@ -28,7 +21,7 @@ const GenreBadge: React.FC<{ genre: string; onClick: () => void; isActive: boole
 };
 
 const MoviesList: React.FC = () => {
-    const [movies, setMovies] = useState<Movie[]>([]);
+    const [movies, setMovies] = useState<IMovie[]>([]);
     const [page, setPage] = useState(1); // Початкова сторінка
     const [totalPages, setTotalPages] = useState(0); // Загальна кількість сторінок
     const [genres, setGenres] = useState<string[]>([]);

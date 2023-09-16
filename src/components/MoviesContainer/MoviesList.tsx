@@ -3,18 +3,12 @@ import axios from 'axios';
 import styles from './Movies.module.css';
 import { getStarRating } from './getStarRating';
 import {NavLink} from "react-router-dom";
+import {IMovie} from "../../interfaces/movieInterface";
 
-interface Movie {
-    id: number;
-    title: string;
-    release_date: string;
-    vote_average: number;
-    overview: string;
-    poster_path: string;
-}
+
 
 function MoviesList() {
-    const [movies, setMovies] = useState<Movie[]>([]);
+    const [movies, setMovies] = useState<IMovie[]>([]);
     const [page, setPage] = useState(1); // Початкова сторінка
     const [totalPages, setTotalPages] = useState(0); // Загальна кількість сторінок
 

@@ -5,19 +5,12 @@ import styles from '../MoviesContainer/Movies.module.css';
 import { NavLink } from 'react-router-dom';
 import {getStarRating} from "../MoviesContainer/getStarRating";
 import {inspect} from "util";
+import {IMovie} from "../../interfaces/movieInterface";
 
 
-interface Movie {
-    id: number;
-    title: string;
-    release_date: string;
-    vote_average: number;
-    overview: string;
-    poster_path: string;
-}
 
 function SearchMovies() {
-    const [movies, setMovies] = useState<Movie[]>([]);
+    const [movies, setMovies] = useState<IMovie[]>([]);
     const [page, setPage] = useState(1);
     const [totalPages, setTotalPages] = useState(0);
     const [searchText, setSearchText] = useState('');

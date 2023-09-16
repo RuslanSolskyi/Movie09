@@ -8,7 +8,6 @@ const ThemeSwitcher: React.FC = () => {
         setIsLightTheme(!isLightTheme);
     };
 
-    // Додайте клас "light-theme" або "dark-theme" до кореневого елемента додатку
     const appThemeClass = isLightTheme ? 'light-theme' : 'dark-theme';
 
     return (
@@ -21,7 +20,7 @@ const ThemeSwitcher: React.FC = () => {
                     onChange={toggleTheme}
                 />
             </label>
-            {/* Додайте інші компоненти вашого додатку */}
+
         </div>
     );
 };
