@@ -1,4 +1,4 @@
-/* MoviesList.css */
+
 
 .movies-container {
     display: flex;
@@ -32,19 +32,26 @@
     gap: 20px;
 }
 
+
+
+.movies-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Розташування між елементами */
+}
+
 .movie-card {
-    width: calc(20% - 20px); /* Зменшуємо розмір картки фільму та розміщаємо в рядок */
-    background-color: #fff;
-    border: 1px solid #000;
-    padding: 10px;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 10px 0;
     text-align: center;
-    box-shadow: 0px 0px 5px 0px #000;
+    width: calc(19% - 20px); /* 25% ширини з відступами */
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+    background-color: #fff;
 }
 
 .movie-card img {
     max-width: 100%;
-    height: auto;
-    object-fit: cover;
 }
 
 .movie-title {
@@ -53,6 +60,37 @@
 }
 
 .rating {
-    font-weight: bold;
-    color: #ffd400;
+    font-size: 1.1rem;
+    color: #ff9800;
 }
+
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.pagination button {
+    background-color: #ccc;
+    color: #1f6ab4; /* Жовтий колір тексту */
+    border: none;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px; /* Невеликий радіус бордюру */
+    padding: 5px 15px; /* Зменшив розмір кнопок */
+    font-family: 'Ваш_шрифт', sans-serif; /* Замініть 'Ваш_шрифт' на власний шрифт */
+}
+
+.pagination button:hover {
+    background-color: #999; /* Сірий колір при наведенні */
+    color: #fff; /* Колір тексту при наведенні */
+}
+
+.pagination button:disabled {
+    background-color: #ccc;
+    color: #999; /* Сірий колір тексту в вимкненому стані */
+    cursor: not-allowed;
+}
+
