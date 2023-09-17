@@ -30,37 +30,6 @@
     color: #ff9800;
 }
 
-/*.pagination {*/
-/*    display: flex;*/
-/*    justify-content: center;*/
-/*    margin-top: 20px;*/
-/*}*/
-
-/*.pagination button {*/
-/*    background-color: #007acc;*/
-/*    color: #fff;*/
-/*    padding: 10px 20px;*/
-/*    border: none;*/
-/*    margin: 0 5px;*/
-/*    cursor: pointer;*/
-/*    transition: background-color 0.3s;*/
-/*}*/
-
-/*.pagination button:hover {*/
-/*    background-color: #005b9f;*/
-/*}*/
-
-/*.pagination button:disabled {*/
-/*    background-color: #ccc;*/
-/*    cursor: not-allowed;*/
-/*}*/
-/* Movies.module.css */
-
-/* Movies.module.css */
-
-/* Movies.module.css */
-
-/* Movies.module.css */
 
 .pagination {
     display: flex;
