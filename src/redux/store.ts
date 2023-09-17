@@ -1,9 +1,14 @@
 import {configureStore} from "@reduxjs/toolkit";
 
 import {themeReducer} from "./slices/themeSlice";
-
+import {moviesReducer} from "./slices/moviesSlice";
+import {genresReducer} from "./slices/genresSlice";
+// import {useSelector} from "react-redux";
+// const movies = useSelector((state: RootState) => state.movies);
 const store = configureStore({
     reducer: {
+        genres: genresReducer, // Додайте слайс жанрів
+        movies: moviesReducer,
 
         theme: themeReducer
     }
